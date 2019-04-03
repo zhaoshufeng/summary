@@ -38,7 +38,7 @@ git pull --allow-unrelated-histories
 
 ### 五、多人协作
 
-#### 1. 远程仓库-->本地仓库（克隆）
+#### 1、远程仓库-->本地仓库（克隆）
 
 a）创建远程仓库gitDemo
 
@@ -50,7 +50,7 @@ d）本地仓库分支推送到远程仓库分支  git push -u origin master �
 
 e）远程仓库查看修改
 
-####  2. 本地仓库-->远程仓库（同步）
+####  2、本地仓库-->远程仓库（同步）
 
 a）创建本地仓库gitDemo且git init
 
