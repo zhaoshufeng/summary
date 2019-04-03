@@ -41,50 +41,50 @@ $("li:lt(2)")    //下标小于 2 的li
 $("li:not(#runoob)") //挑选除 id="runoob" 以外的所有li
 
 
-	3.2 **内容过滤选择器**
+#### 3.2 内容过滤选择器
 
-	$("div:contains('Runob')")    // 包含 Runob文本的元素
+$("div:contains('Runob')")    // 包含 Runob文本的元素
 
-	$("td:empty")                 //不包含子元素或者文本的空元素
+$("td:empty")                 //不包含子元素或者文本的空元素
 
-	$("div:has(selector)")        //含有选择器所匹配的元素
+$("div:has(selector)")        //含有选择器所匹配的元素
 
-	$("td:parent")                //含有子元素或者文本的元素
-
-
-	3.3 **可见性过滤选择器**
-
-	$("li:hidden")       //匹配所有不可见元素，或type为hidden的元素
-
-	$("li:visible")      //匹配所有可见元素
+$("td:parent")                //含有子元素或者文本的元素
 
 
-	3.4 **属性过滤选择器**
+#### 3.3 可见性过滤选择器
 
-	$("div[id]")        //所有含有 id 属性的 div 元素
+$("li:hidden")       //匹配所有不可见元素，或type为hidden的元素
 
-	$("div[id='123']")        // id属性值为123的div 元素
-
-	$("div[id!='123']")        // id属性值不等于123的div 元素
-
-	$("div[id^='qq']")        // id属性值以qq开头的div 元素
-
-	$("div[id$='zz']")        // id属性值以zz结尾的div 元素
-
-	$("div[id*='bb']")        // id属性值包含bb的div 元素
-
-	$("input[id][name$='man']") //多属性选过滤，同时满足两个属性的条件的元素
+$("li:visible")      //匹配所有可见元素
 
 
-	3.5 **状态过滤选择器**
+#### 3.4 属性过滤选择器
 
-	$("input:enabled")    // 匹配可用的 input
+$("div[id]")        //所有含有 id 属性的 div 元素
 
-	$("input:disabled")   // 匹配不可用的 input
+$("div[id='123']")        // id属性值为123的div 元素
 
-	$("input:checked")    // 匹配选中的 input
+$("div[id!='123']")        // id属性值不等于123的div 元素
 
-	$("option:selected")  // 匹配选中的 option
+$("div[id^='qq']")        // id属性值以qq开头的div 元素
+
+$("div[id$='zz']")        // id属性值以zz结尾的div 元素
+
+$("div[id*='bb']")        // id属性值包含bb的div 元素
+
+$("input[id][name$='man']") //多属性选过滤，同时满足两个属性的条件的元素
+
+
+#### 3.5 状态过滤选择器
+
+$("input:enabled")    // 匹配可用的 input
+
+$("input:disabled")   // 匹配不可用的 input
+
+$("input:checked")    // 匹配选中的 input
+
+$("option:selected")  // 匹配选中的 option
 
 
 ### 4.表单选择器
