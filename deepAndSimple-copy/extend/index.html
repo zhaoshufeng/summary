@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            let obj1={'name':'张三','like':'旅游','address':{'provice':'河南','city':'郑州'}}
+            let obj2={'like':'看书','address':{'area':'平顶山'}}
+            let obj3=$.extend({},obj1,obj2) // 默认浅拷贝
+            let obj4=$.extend(true,{},obj1,obj2) // 深拷贝
+            let obj5=$.extend(false,{},obj1,obj2) // 浅拷贝
+            // console.log(obj1);
+            // console.log(obj2);
+            console.log(obj3);
+            console.log(obj4);
+            console.log(obj5);
+
+            /* $.extend 
+            同名属性覆盖
+            不同属性合并
+
+            <------深浅拷贝区别------> 
+            前提：同名属性，属性值不同且是一个对象时，属性值里的属性如何操作？
+            深拷贝：属性值里的属性合并
+            浅拷贝：属性值里的属性直接覆盖
+            默认：浅拷贝
+            */
+
+
+
+
+
+            /*
+            $.extend(item) 相当于为jquery全局对象添加了一个静态方法，可直接调用该方法
+            */
+           $.extend({say:function(){console.log('hello world')}})
+           $.say()
+
+
+
+
+           /*
+           $.fn.extend(item) 是为每一个实例添加一个实例方法了
+           */
+           $.fn.extend({say:function(val){console.log(val)}})
+           $('#demo').say('hi world')
+
+        })
+    </script>
+    <img src="../static/img/01.png" alt="">
+    <div id="demo"></div>
+    <hr>
+</body>
+</html>

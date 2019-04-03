@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义插件</title>
+    <link rel="stylesheet" href="../static/css/table.css">
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/table.js"></script>
+</head>
+<body>
+    <table border="1" width="100%">
+		<tr>
+			<td>书名</td>
+			<td>作者</td>
+			<td>点击量</td>
+		</tr>
+		<tr>
+			<td>java编程思想</td>
+			<td>孙悟空</td>
+			<td>10万</td>
+		</tr>
+		<tr>
+			<td>C++</td>
+			<td>我吃西红柿</td>
+			<td>8万</td>
+		</tr>
+		<tr>
+			<td>java从入门到入土</td>
+			<td>逆苍天</td>
+			<td>2万</td>
+		</tr>
+		<tr>
+			<td>大数据</td>
+			<td>唐僧</td>
+			<td>18万</td>
+		</tr>
+		<tr>
+			<td>人工智能</td>
+			<td>八戒</td>
+			<td>20万</td>
+		</tr>
+    </table>
+    <br>
+    <div class="demo">
+        <div class="demo-child" style="width:50px;height:50px;background:red;"></div>
+    </div>
+    <br>
+    <ul class="list">
+        <li>apple</li>
+    </ul>
+    <script>
+        $(function(){
+            // $('table').bgColor();
+            $('table').light();
+
+            // $('.demo-child').on('click',function(){
+            //     console.log('触发点击事件')
+            // })
+            $('.demo').on('click','.demo-child',function(){
+                console.log('再次触发点击事件')
+            })
+
+
+            $('.list').on('click','li',function(){
+                var val=$(this).text();
+                console.log('我是'+val)
+                $(this).parent('ul').append(' <li>'+val+1+'</li>')
+            })
+        })
+    </script>
+</body>
+</html>
