@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #parent{
+            width:200px;
+            height:200px;
+            background:red;
+        }
+        #child{
+            width:100px;
+            height:100px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent" class="parent">
+        <div id="child" class="child"></div>
+    </div>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+    </ul>
+    <script>
+        document.getElementsByClassName('parent')[0].onclick=function(e){
+            console.log(e.target)
+        }
+        document.getElementsByClassName('child')[0].onclick=function(e){
+            console.log(e.target)
+        }
+        document.getElementsByTagName('ul')[0].onmouseover=function(e){
+            console.log(e.target)
+        }
+    </script>
+</body>
+</html>

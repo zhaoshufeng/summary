@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面试1</title>
+</head>
+<body>
+    <script>
+        // 题1 过滤数组中的偶数
+        let arr1=[1,2,3,4,5,6];
+        let newArr1=[];
+        newArr1=arr1.filter((val) => {
+            return val%2==0;
+        })
+        console.log(arr1)
+        console.log(newArr1)
+
+        // 题2 对数组排序
+        /*
+        sort()方法
+        不设置参数，按照字符编码排序
+        设置参数，参数必须是个函数，并且有两个参数，最后返回一个数字，用于说明两个数值的排列顺序
+        */
+        let arr2=[0.5,101,9,35,78,21]
+        console.log(`无比较函数，按字符编码排序：${arr2.sort()}`)
+
+        function sortNumber(a,b){
+            return a-b
+        }
+        console.log(`有比较函数，按数值大小排序${arr2.sort(sortNumber)}`)
+
+
+        // 题3 用promise封装ajax
+        /*
+        Promise最大的好处是分离执行代码和处理结果的代码
+        */
+
+        function ajax(method,url,data){
+            var request=new XMLHttpRequest();
+            return new Promise(function(resolve,reject){
+                request.onreadystatechange=function(){
+                    if(request.readyState===4){
+                        if(request.status===200){
+                            resolve(request.responseText)
+                        }
+                        else{
+                            reject(request.status)
+                        }
+                    }
+                }
+                request.open(method,url)
+                request.send(data)
+            })
+        }
+        var p=ajax('get','./data.json',{a:1})
+        p.then(function(text){
+            console.log(text)
+        }).catch(function(status){
+            console.log(status)
+        })
+
+        function test(){
+            return new Promise(function(resolve,reject){
+                var num=Math.random()*10;
+                if(num<5){
+                    resolve(num)
+                }
+                else{
+                    reject(num)
+                }
+            })
+        }
+        test()
+        .then(function(data){
+            console.log(`小于5的随机数是：${data}`)
+        })
+        .catch(function(data){
+            console.log(`大于等于5的随机数是：${data}`)
+        })
+    </script>
+</body>
+</html>

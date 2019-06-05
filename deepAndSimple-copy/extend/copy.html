@@ -68,7 +68,7 @@
 
         /* 深浅拷贝特点
         1、原有数据不会被修改
-        2、 复杂对象拷贝时，相同属性，且属性值是对象，浅拷贝（默认）后者直接覆盖前者
+        2、复杂对象拷贝时，相同属性，且属性值是对象，浅拷贝（默认）后者直接覆盖前者
             深拷贝前后比较相同属性覆盖，不同属性合并
         */
         var obj9={a:1,b:2,c:{d:3,e:4}};
@@ -77,6 +77,28 @@
         var obj12=$.extend(true,{},obj9,obj10);
         console.log('obj11:'+JSON.stringify(obj11))
         console.log('obj12:'+JSON.stringify(obj12))
+
+
+        // es6 ...扩展运算符（可实现对象或者数组的拷贝-->浅拷贝）  
+        var obj13={a:1,b:2,c:{d:3,e:4}};
+        var obj14={...obj13};
+        var obj15={...obj13,c:3};
+        var obj16=Object.assign({},obj13);
+        console.log('obj13:'+JSON.stringify(obj13))
+        console.log('obj14:'+JSON.stringify(obj14))
+        console.log('obj15:'+JSON.stringify(obj15))
+        console.log('obj16:'+JSON.stringify(obj16))
+        console.log('...扩展运算符，实现对象属性的拷贝，等同于object.assign()')
+
+        // 浅拷贝
+        var obj17={a:1,b:2,c:{d:3,e:4}};
+        var obj18={...obj17};
+        obj18.c.e=5;
+        console.log('obj17:'+JSON.stringify(obj17))
+        console.log('obj18:'+JSON.stringify(obj18))
+        console.log('...扩展运算符，实现浅拷贝')
+
+
 
     </script>
 </body>

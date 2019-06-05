@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width:200px;
+            height:200px;
+            position: relative;
+            margin:100px auto;
+            transform-style: preserve-3d;
+            transform: rotateX(45deg) rotateY(-45deg);
+        }
+        .top,.bottom,.left,.right,.after,.before{
+            width:200px;
+            height:200px;
+            position: absolute;
+            line-height:200px;
+            text-align: center;
+            opacity: 0.7;
+        }
+        .top{
+            background:red;
+            transform: rotateX(90deg) translateZ(100px) translateY(100px);
+        }
+        .bottom{
+            background:blue;
+            transform: rotateX(-90deg) translateZ(100px) translateY(-100px);
+        }
+        .left{
+            background:yellow;
+            transform: rotateY(90deg) translateZ(100px) translateX(-100px);
+        }
+        .right{
+            background:orange;
+            transform: rotateY(-90deg) translateZ(100px) translateX(100px);
+        }
+        .before{
+            background:green;
+        }
+        .after{
+            background:pink;
+            transform: translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="top">上</div>
+        <div class="bottom">下</div>
+        <div class="left">左</div>
+        <div class="right">右</div>
+        <div class="before">前</div>
+        <div class="after">后</div>
+    </div>
+</body>
+</html>
